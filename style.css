@@ -1,9 +1,9 @@
+/* Reset e base */
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
   background: #f8f6fb;
@@ -11,7 +11,6 @@ body {
   scroll-behavior: smooth;
   position: relative;
 }
-
 .fundo-fixo {
   position: fixed;
   top: 0;
@@ -24,11 +23,10 @@ body {
   background-attachment: fixed; 
   background-repeat: no-repeat;
   z-index: -1;
-  opacity: 0.30; /* deixa o fundo suave */
-  filter: hue-rotate(280deg); /* tom lilás */
+  opacity: 0.30;
+  filter: hue-rotate(280deg);
   pointer-events: none;
 }
-
 header {
   position: fixed;
   top: 0;
@@ -37,6 +35,22 @@ header {
   padding: 10px 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Para posicionar botões no canto */
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50px;
+  padding-right: 20px;
+}
+
+/* Menu Navegação */
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 nav ul {
@@ -58,6 +72,45 @@ nav a:hover {
   color: #f4e9f9;
 }
 
+/* Botão Hamburguer */
+#btn-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 13px;
+  right: 20px;
+  z-index: 1100;
+  padding: 0;
+}
+
+#btn-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: rgb(76, 8, 116);
+  border-radius: 2px;
+}
+
+/* Botão fechar X no menu mobile */
+#btn-fechar {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: rgb(76, 8, 116);
+  cursor: pointer;
+  z-index: 1101;
+}
+
+/* Seções */
 .secao {
   min-height: 100vh;
   padding: 0 20px;
@@ -70,6 +123,7 @@ nav a:hover {
   transform: translateY(50px);
   transition: all 1s ease;
   font-size: 20px;
+  margin-top: 50px;
 }
 
 .secao.visivel {
@@ -145,6 +199,7 @@ footer {
   padding: 20px;
   background: #c8a2c8;
   color: white;
+  margin-top: 20px;
 }
 
 .whatsapp-icon {
@@ -161,10 +216,50 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+  }
+
+  nav {
+    position: fixed;
+    top: 50px;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: calc(100vh - 50px);
+    background: #e6d9e6;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 20px;
+    transition: right 0.3s ease;
+    z-index: 1050;
+  }
+
+  nav.ativo {
+    right: 0;
+  }
+
+  #btn-menu {
+    display: flex;
+  }
+
+  #btn-fechar {
+    display: none;
+  }
+
+  nav.ativo + #btn-fechar {
+    display: block;
+  }
+
+  nav.ativo ~ #btn-menu {
+    display: none;
+  }
+
+  nav:not(.ativo) ul {
+    display: none;
   }
 
   .servicos li {
@@ -182,5 +277,12 @@ footer {
 
   h2 {
     font-size: 20px;
+  }
+
+  .fundo-fixo {
+    background-attachment: scroll;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
   }
 }

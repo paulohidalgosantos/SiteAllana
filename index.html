@@ -2,16 +2,20 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Allana Hidalgo - Contadora</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Plano de fundo fixo -->
   <div class="fundo-fixo"></div>
 
   <header>
-    <nav>
+    <button id="btn-menu" aria-label="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="nav-menu">
       <ul>
         <li><a href="#inicio">Início</a></li>
         <li><a href="#servicos">Serviços</a></li>
@@ -19,6 +23,7 @@
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
+    <button id="btn-fechar" aria-label="Fechar menu">×</button>
   </header>
 
   <section id="inicio" class="secao animar">
@@ -32,23 +37,23 @@
     <h2>Serviços</h2>
     <ul class="servicos">
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="MEI" class="icone-servico" />
-        Abertura de MEI
+        <img src="imagens/mei.png" alt="MEI" class="icone-servico" />
+        Declarações e regularização do MEI
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250649.png" alt="Declaração MEI" class="icone-servico" />
-        Declarações do MEI
+        <img src="imagens/empresa.png" alt="Declaração MEI" class="icone-servico" />
+        Abertura e Encerramento do MEI
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Imposto de Renda Pessoa Física" class="icone-servico" />
-        Imposto de Renda Pessoa Física
+        <img src="imagens/parcelamento.png" alt="Imposto de Renda Pessoa Física" class="icone-servico" />
+        Parcelamentos
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Imposto de Renda Pessoa Jurídica" class="icone-servico" />
-        Imposto de Renda Pessoa Jurídica
+        <img src="imagens/imposto de renda.png" alt="Imposto de Renda Pessoa Jurídica" class="icone-servico" />
+        Declaração de Imposto de Renda Pessoa Física
       </li>
       <li>
-        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Consultoria Tributária" class="icone-servico" />
+        <img src="imagens/duvida.png" alt="Consultoria Tributária" class="icone-servico" />
         Consultoria Tributária
       </li>
     </ul>
