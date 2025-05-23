@@ -1,0 +1,186 @@
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f6fb;
+  color: #333;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+.fundo-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(imagens/Allana.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.30; /* deixa o fundo suave */
+  filter: hue-rotate(280deg); /* tom lilás */
+  pointer-events: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #e6d9e6;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(76, 8, 116);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f4e9f9;
+}
+
+.secao {
+  min-height: 100vh;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+  font-size: 20px;
+}
+
+.secao.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#inicio {
+  color:  #333;
+}
+
+.servicos {
+  list-style: none;
+  padding: 0;
+}
+
+.servicos li {
+  margin: 12px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icone-servico {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+#depoimentos {
+  background: none;
+}
+
+#contato {
+  background: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+button {
+  background-color: #a678b4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  font-size: 18px;
+}
+
+button:hover {
+  background-color: #935fa2;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #c8a2c8;
+  color: white;
+}
+
+.whatsapp-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  z-index: 1001;
+}
+
+.whatsapp-icon img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .servicos li {
+    font-size: 16px;
+  }
+
+  .icone-servico {
+    width: 22px;
+    height: 22px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

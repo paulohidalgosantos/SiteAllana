@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allana Hidalgo - Contadora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Plano de fundo fixo -->
+  <div class="fundo-fixo"></div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="secao animar">
+    <div class="conteudo-inicio">
+      <h1>Olá, sou Allana Hidalgo</h1>
+      <p>Trabalho na área fiscal com mais de 10 anos de experiência.<br>Deixe-me resolver os seus problemas tributários!</p>
+    </div>
+  </section>
+
+  <section id="servicos" class="secao animar">
+    <h2>Serviços</h2>
+    <ul class="servicos">
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="MEI" class="icone-servico" />
+        Abertura de MEI
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/1250/1250649.png" alt="Declaração MEI" class="icone-servico" />
+        Declarações do MEI
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Imposto de Renda Pessoa Física" class="icone-servico" />
+        Imposto de Renda Pessoa Física
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Imposto de Renda Pessoa Jurídica" class="icone-servico" />
+        Imposto de Renda Pessoa Jurídica
+      </li>
+      <li>
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Consultoria Tributária" class="icone-servico" />
+        Consultoria Tributária
+      </li>
+    </ul>
+  </section>
+
+  <section id="depoimentos" class="secao animar">
+    <h2>Depoimentos</h2>
+    <p>Ainda não há depoimentos cadastrados.</p>
+  </section>
+
+  <section id="contato" class="secao animar">
+    <h2>Contato</h2>
+    <form id="formulario-contato" onsubmit="enviarWhatsApp(event)">
+      <input type="text" id="nome" placeholder="Seu nome" required />
+      <input type="tel" id="telefone" placeholder="Seu número de WhatsApp (somente números)" pattern="[0-9]{10,15}" required />
+      <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar para o WhatsApp</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Allana Hidalgo. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/5513981550121" class="whatsapp-icon" target="_blank" title="Fale com Allana no WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
