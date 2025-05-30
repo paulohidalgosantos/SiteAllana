@@ -7,7 +7,7 @@ body, h1, h2, p, ul, li {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f2f9;
-  color: #4c0874; /* Roxo principal */
+  color: #4c0874;
   scroll-behavior: smooth;
   position: relative;
   -webkit-font-smoothing: antialiased;
@@ -54,7 +54,6 @@ nav {
   width: 100%;
   max-width: 900px;
 }
-
 nav ul {
   display: flex;
   justify-content: center;
@@ -62,7 +61,6 @@ nav ul {
   gap: 45px;
   flex-wrap: wrap;
 }
-
 nav a {
   text-decoration: none;
   color: #4c0874;
@@ -74,7 +72,6 @@ nav a {
   padding: 4px 0;
   position: relative;
 }
-
 nav a::after {
   content: "";
   position: absolute;
@@ -86,13 +83,11 @@ nav a::after {
   border-radius: 3px;
   transition: width 0.3s ease;
 }
-
 nav a:hover,
 nav a:focus {
   color: #8c58b4;
   transform: translateY(-2px);
 }
-
 nav a:hover::after,
 nav a:focus::after {
   width: 100%;
@@ -115,7 +110,6 @@ nav a:focus::after {
   padding: 0;
   transition: transform 0.3s ease;
 }
-
 #btn-menu span {
   width: 100%;
   height: 3px;
@@ -123,7 +117,6 @@ nav a:focus::after {
   border-radius: 3px;
   transition: background-color 0.3s ease;
 }
-
 #btn-menu:hover span {
   background-color: #935fa2;
 }
@@ -142,7 +135,6 @@ nav a:focus::after {
   z-index: 1151;
   transition: color 0.3s ease;
 }
-
 #btn-fechar:hover {
   color: #935fa2;
 }
@@ -168,228 +160,185 @@ nav a:focus::after {
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(166, 120, 180, 0.15);
 }
-
 .secao.visivel {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.15s;
 }
-
-/* Animação especial para tela Início */
-#inicio {
-  color: white;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: entradaInicio 1.2s forwards ease-out;
-  animation-delay: 0.4s;
-  background: transparent;
-  text-shadow: 0 0 10px rgba(0,0,0,0.6);
-}
-
-@keyframes entradaInicio {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Conteúdo interno do início com fonte branca */
-.conteudo-inicio h1, .conteudo-inicio p {
-  color: white;
-  font-weight: 700;
-  text-shadow:
-    0 1px 5px rgba(0,0,0,0.6),
-    0 0 15px rgba(76, 8, 116, 0.7);
-}
-
-/* Seção Serviços */
-.servicos {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  max-width: 700px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-.servicos li {
-  flex: 1 1 250px;
-  background: linear-gradient(145deg, #f0eaff, #d4c1ff);
-  border-radius: 16px;
-  padding: 22px 20px;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  box-shadow:
-    10px 10px 20px #b6a5d2,
-    -10px -10px 20px #ffffff;
-  transition: box-shadow 0.35s ease, transform 0.35s ease;
-  cursor: default;
-  color: #4c0874;
-  font-weight: 600;
-  transform-style: preserve-3d;
-  perspective: 600px;
-}
-
-.servicos li:hover {
-  box-shadow:
-    15px 15px 30px #a186d1,
-    -15px -15px 30px #f6f1ff;
-  transform: translateY(-7px) translateZ(12px);
-}
-
-.icone-servico {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
-}
-
-/* Depoimentos */
-#depoimentos {
-  background: transparent;
-  font-style: italic;
-  font-size: 1.2rem;
-  color: #6e4c8fcc;
-  max-width: 700px;
-}
-
-/* Contato */
-#contato {
-  background: transparent;
-}
-
-/* Formulário */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  width: 90%;
-  max-width: 420px;
-}
-
-/* Inputs e textarea com estilo moderno e 3D */
-input, textarea {
-  padding: 14px 18px;
-  border-radius: 12px;
-  border: none;
-  font-size: 17px;
-  font-family: inherit;
-  background: linear-gradient(145deg, #e8ddff, #cbbaff);
-  box-shadow:
-    6px 6px 12px #b2a0d1,
-    -6px -6px 12px #fefbff;
-  transition: box-shadow 0.35s ease, background-color 0.3s ease;
-  color: #4c0874;
-  resize: vertical;
-  min-height: 44px;
-}
-
-textarea {
-  min-height: 110px;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  box-shadow:
-    0 0 10px 3px #bca3f2,
-    inset 2px 2px 8px #d5bbff;
-  background: #f8f5ff;
-  color: #4c0874;
-}
-
-/* Botão */
-button {
-  background: linear-gradient(145deg, #8f5bc0, #6828a3);
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
-  border-radius: 15px;
-  border: none;
-  padding: 14px 0;
-  cursor: pointer;
-  box-shadow:
-    6px 6px 10px #4a0f76,
-    -6px -6px 10px #b680e0;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+.secao h2 {
+  font-weight: 900;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  color: #682888;
+  text-shadow: 1px 1px 5px #cbb6e8cc;
   user-select: none;
 }
 
-button:hover {
-  background: linear-gradient(145deg, #a275d5, #7a44bb);
-  box-shadow:
-    8px 8px 18px #6f3eb0,
-    -8px -8px 18px #d1afff;
-  transform: translateY(-3px);
+/* Conteúdo Início */
+.conteudo-inicio h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 14px;
+  color: #4c0874;
+  text-shadow: 0 1px 2px #a678b4;
+}
+.conteudo-inicio p {
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-button:active {
-  transform: translateY(-1px);
+/* Serviços */
+.servicos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px 48px;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.15rem;
+  user-select: none;
+}
+.servicos li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-basis: 40%;
+  min-width: 280px;
+  background: #f0e9ffcc;
+  padding: 18px 26px;
+  border-radius: 16px;
+  box-shadow: 0 5px 13px #d9c2f8cc;
+  transition: background-color 0.3s ease;
+}
+.servicos li:hover {
+  background-color: #c6a8f6cc;
+  color: white;
+  cursor: default;
+}
+.icone-servico {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  user-select: none;
 }
 
-/* Ícone WhatsApp */
+/* Formulário Contato */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  width: 100%;
+}
+input[type="text"],
+input[type="tel"],
+textarea {
+  font-size: 1rem;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid #a678b4;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  min-height: 40px;
+}
+input:focus,
+textarea:focus {
+  border-color: #682888;
+  outline: none;
+}
+textarea {
+  min-height: 100px;
+}
+button[type="submit"] {
+  font-size: 1.1rem;
+  padding: 14px 0;
+  background-color: #4c0874;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: #682888;
+}
+
+/* Botão WhatsApp flutuante */
 .whatsapp-icon {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  z-index: 1001;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1200;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
-
 .whatsapp-icon img {
-  width: 100%;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.3s ease;
 }
-
-.whatsapp-icon:hover {
+.whatsapp-icon:hover img,
+.whatsapp-icon:focus-within img {
   transform: scale(1.1);
 }
 
-.whatsapp svg {
-  fill: white;
-  width: 32px;
-  height: 32px;
+/* RODAPÉ */
+footer {
+  background-color: #cdafebdd;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4c0874;
+  box-shadow: inset 0 3px 6px rgba(76, 8, 116, 0.14);
+  margin-top: 40px;
 }
 
-.whatsapp:hover {
-  background: #1ebe57;
-  transform: scale(1.12);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  nav ul {
+/* RESPONSIVO */
+@media (max-width: 720px) {
+  .servicos li {
+    flex-basis: 90%;
+  }
+  header nav {
     display: none;
-    flex-direction: column;
-    background: #f9f7fbdd;
     position: fixed;
-    top: 60px;
+    top: 0;
     right: 0;
-    width: 220px;
-    padding: 25px 15px;
-    box-shadow: -5px 0 20px rgba(76, 8, 116, 0.1);
-    border-radius: 0 0 0 15px;
-    transition: transform 0.3s ease;
-    transform: translateX(100%);
+    background: #cdafebee;
+    width: 70vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    box-shadow: -3px 0 12px #8c58b4cc;
     z-index: 1140;
+    transition: transform 0.4s ease;
+    transform: translateX(100%);
   }
-  nav ul.menu-aberto {
-    display: flex;
+  header nav.aberto {
     transform: translateX(0);
+    display: flex;
   }
-  nav ul li {
-    margin-bottom: 18px;
-  }
-  nav a {
-    font-size: 1.25rem;
+  nav ul {
+    flex-direction: column;
+    gap: 30px;
   }
   #btn-menu {
-    display: flex;
+    display: flex;   
   }
   #btn-fechar {
-    display: block;
+    display: none;
   }
 }
