@@ -4,7 +4,12 @@ body, h1, h2, p, ul, li {
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f2f9;
   color: #4c0874;
@@ -12,7 +17,9 @@ body {
   position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
+
 .fundo-fixo {
   position: fixed;
   top: 0;
@@ -141,20 +148,19 @@ nav a:focus::after {
 
 /* SEÇÕES */
 .secao {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  box-sizing: border-box;
   text-align: center;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1s cubic-bezier(0.4,0,0.2,1);
   font-size: 20px;
   color: #4c0874;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   border-radius: 15px;
   box-shadow: 0 6px 15px rgba(166, 120, 180, 0.15);
 }
