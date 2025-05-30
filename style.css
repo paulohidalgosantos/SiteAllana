@@ -307,6 +307,12 @@ footer {
 
 /* RESPONSIVO */
 @media (max-width: 720px) {
+  .fundo-fixo {
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center top;
+  }
+
   .servicos li {
     flex-basis: 90%;
   }
