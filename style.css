@@ -5,11 +5,13 @@ body, h1, h2, p, ul, li {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f6fb;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f2f9;
+  color: #4c0874; /* Roxo principal */
   scroll-behavior: smooth;
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .fundo-fixo {
   position: fixed;
@@ -20,30 +22,29 @@ body {
   background-image: url(imagens/Allana.jpeg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-repeat: no-repeat;
   z-index: -1;
-  opacity: 0.30;
-  filter: hue-rotate(280deg);
+  opacity: 0.25;
+  filter: hue-rotate(270deg) saturate(0.9);
   pointer-events: none;
+  transition: opacity 0.5s ease;
 }
+
+/* HEADER */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #e6d9e6;
-  padding: 10px 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #cdafebdd;
+  padding: 12px 0;
+  z-index: 1100;
+  box-shadow: 0 3px 15px rgba(76, 8, 116, 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Para posicionar botões no canto */
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 50px;
-  padding-right: 20px;
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
 }
 
 /* Menu Navegação */
@@ -51,25 +52,50 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 900px;
 }
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 40px;
+  gap: 45px;
   flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
-  color: rgb(76, 8, 116);
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: #4c0874;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+  transition: color 0.4s ease, transform 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 4px 0;
+  position: relative;
 }
 
-nav a:hover {
-  color: #f4e9f9;
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 3px;
+  background: #a678b4;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #8c58b4;
+  transform: translateY(-2px);
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
 }
 
 /* Botão Hamburguer */
@@ -78,130 +104,233 @@ nav a:hover {
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
-  height: 24px;
+  height: 22px;
   background: none;
   border: none;
   cursor: pointer;
   position: fixed;
-  top: 13px;
+  top: 15px;
   right: 20px;
-  z-index: 1100;
+  z-index: 1150;
   padding: 0;
+  transition: transform 0.3s ease;
 }
 
 #btn-menu span {
   width: 100%;
   height: 3px;
-  background-color: rgb(76, 8, 116);
-  border-radius: 2px;
+  background-color: #4c0874;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+#btn-menu:hover span {
+  background-color: #935fa2;
 }
 
 /* Botão fechar X no menu mobile */
 #btn-fechar {
   display: none;
   position: fixed;
-  top: 10px;
+  top: 12px;
   right: 20px;
   background: none;
   border: none;
-  font-size: 32px;
-  color: rgb(76, 8, 116);
+  font-size: 36px;
+  color: #4c0874;
   cursor: pointer;
-  z-index: 1101;
+  z-index: 1151;
+  transition: color 0.3s ease;
 }
 
-/* Seções */
+#btn-fechar:hover {
+  color: #935fa2;
+}
+
+/* SEÇÕES */
 .secao {
   min-height: 100vh;
-  padding: 0 20px;
+  padding: 60px 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
+  transform: translateY(40px);
+  transition: all 1s cubic-bezier(0.4,0,0.2,1);
   font-size: 20px;
   margin-top: 50px;
+  color: #4c0874;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(166, 120, 180, 0.15);
 }
 
 .secao.visivel {
   opacity: 1;
   transform: translateY(0);
+  transition-delay: 0.15s;
 }
 
+/* Animação especial para tela Início */
 #inicio {
-  color:  #333;
+  color: white;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: entradaInicio 1.2s forwards ease-out;
+  animation-delay: 0.4s;
+  background: transparent;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 
+@keyframes entradaInicio {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Conteúdo interno do início com fonte branca */
+.conteudo-inicio h1, .conteudo-inicio p {
+  color: white;
+  font-weight: 700;
+  text-shadow:
+    0 1px 5px rgba(0,0,0,0.6),
+    0 0 15px rgba(76, 8, 116, 0.7);
+}
+
+/* Seção Serviços */
 .servicos {
   list-style: none;
   padding: 0;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
 }
 
 .servicos li {
-  margin: 12px 0;
+  flex: 1 1 250px;
+  background: linear-gradient(145deg, #f0eaff, #d4c1ff);
+  border-radius: 16px;
+  padding: 22px 20px;
   font-size: 18px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  box-shadow:
+    10px 10px 20px #b6a5d2,
+    -10px -10px 20px #ffffff;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  cursor: default;
+  color: #4c0874;
+  font-weight: 600;
+  transform-style: preserve-3d;
+  perspective: 600px;
+}
+
+.servicos li:hover {
+  box-shadow:
+    15px 15px 30px #a186d1,
+    -15px -15px 30px #f6f1ff;
+  transform: translateY(-7px) translateZ(12px);
 }
 
 .icone-servico {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
 }
 
+/* Depoimentos */
 #depoimentos {
-  background: none;
+  background: transparent;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #6e4c8fcc;
+  max-width: 700px;
 }
 
+/* Contato */
 #contato {
-  background: none;
+  background: transparent;
 }
 
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
   width: 90%;
-  max-width: 400px;
+  max-width: 420px;
 }
 
+/* Inputs e textarea com estilo moderno e 3D */
 input, textarea {
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: none;
+  font-size: 17px;
   font-family: inherit;
+  background: linear-gradient(145deg, #e8ddff, #cbbaff);
+  box-shadow:
+    6px 6px 12px #b2a0d1,
+    -6px -6px 12px #fefbff;
+  transition: box-shadow 0.35s ease, background-color 0.3s ease;
+  color: #4c0874;
+  resize: vertical;
+  min-height: 44px;
 }
 
+textarea {
+  min-height: 110px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow:
+    0 0 10px 3px #bca3f2,
+    inset 2px 2px 8px #d5bbff;
+  background: #f8f5ff;
+  color: #4c0874;
+}
+
+/* Botão */
 button {
-  background-color: #a678b4;
+  background: linear-gradient(145deg, #8f5bc0, #6828a3);
   color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 15px;
   border: none;
-  padding: 12px;
-  border-radius: 5px;
+  padding: 14px 0;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  font-size: 18px;
+  box-shadow:
+    6px 6px 10px #4a0f76,
+    -6px -6px 10px #b680e0;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
 }
 
 button:hover {
-  background-color: #935fa2;
+  background: linear-gradient(145deg, #a275d5, #7a44bb);
+  box-shadow:
+    8px 8px 18px #6f3eb0,
+    -8px -8px 18px #d1afff;
+  transform: translateY(-3px);
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #c8a2c8;
-  color: white;
-  margin-top: 20px;
+button:active {
+  transform: translateY(-1px);
 }
 
+/* Ícone WhatsApp */
 .whatsapp-icon {
   position: fixed;
   bottom: 20px;
@@ -215,74 +344,52 @@ footer {
   border-radius: 50%;
 }
 
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp svg {
+  fill: white;
+  width: 32px;
+  height: 32px;
+}
+
+.whatsapp:hover {
+  background: #1ebe57;
+  transform: scale(1.12);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   nav ul {
+    display: none;
     flex-direction: column;
-    gap: 20px;
-  }
-
-  nav {
+    background: #f9f7fbdd;
     position: fixed;
-    top: 50px;
-    right: -100%;
-    width: 70%;
-    max-width: 300px;
-    height: calc(100vh - 50px);
-    background: #e6d9e6;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 20px;
-    transition: right 0.3s ease;
-    z-index: 1050;
-  }
-
-  nav.ativo {
+    top: 60px;
     right: 0;
+    width: 220px;
+    padding: 25px 15px;
+    box-shadow: -5px 0 20px rgba(76, 8, 116, 0.1);
+    border-radius: 0 0 0 15px;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    z-index: 1140;
   }
-
+  nav ul.menu-aberto {
+    display: flex;
+    transform: translateX(0);
+  }
+  nav ul li {
+    margin-bottom: 18px;
+  }
+  nav a {
+    font-size: 1.25rem;
+  }
   #btn-menu {
     display: flex;
   }
-
   #btn-fechar {
-    display: none;
-  }
-
-  nav.ativo + #btn-fechar {
     display: block;
-  }
-
-  nav.ativo ~ #btn-menu {
-    display: none;
-  }
-
-  nav:not(.ativo) ul {
-    display: none;
-  }
-
-  .servicos li {
-    font-size: 16px;
-  }
-
-  .icone-servico {
-    width: 22px;
-    height: 22px;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .fundo-fixo {
-    background-attachment: scroll;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
   }
 }

@@ -1,23 +1,27 @@
 function enviarWhatsApp(event) {
   event.preventDefault();
 
+  const nome = document.getElementById('nome').value.trim();
   const telefone = document.getElementById('telefone').value.trim();
   const mensagem = document.getElementById('mensagem').value.trim();
 
-  if (!telefone || !mensagem) {
-    alert('Por favor, preencha o número de WhatsApp e a mensagem.');
+  if (!nome || !telefone || !mensagem) {
+    alert('Por favor, preencha todos os campos.');
     return;
   }
 
-  const numeroLimpo = telefone.replace(/\D/g, '');
+  const numeroCliente = telefone.replace(/\D/g, '');
 
-  if (numeroLimpo.length < 10 || numeroLimpo.length > 15) {
+  if (numeroCliente.length < 10 || numeroCliente.length > 15) {
     alert('Por favor, insira um número válido com DDD e número, apenas números.');
     return;
   }
 
-  const mensagemCodificada = encodeURIComponent(mensagem);
-  const url = `https://api.whatsapp.com/send?phone=${numeroLimpo}&text=${mensagemCodificada}`;
+  const numeroAllana = '5513981550121';
+  const texto = `Olá, me chamo ${nome}, ${mensagem}`;
+  const mensagemCodificada = encodeURIComponent(texto);
+
+  const url = `https://api.whatsapp.com/send?phone=${numeroAllana}&text=${mensagemCodificada}`;
   window.open(url, '_blank');
 }
 
