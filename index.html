@@ -2,84 +2,241 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Allana Hidalgo - Contadora</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Allana Hidalgo - Contadora Especialista</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="fundo-fixo"></div>
-
-  <header>
-    <button id="btn-menu" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav id="nav-menu">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#depoimentos">Depoimentos</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button id="btn-fechar" aria-label="Fechar menu">×</button>
+  <div class="background-gradient"></div>
+  <div class="background-photo"></div>
+  
+  <header class="header">
+    <div class="header-container">
+      <button id="btn-menu" class="menu-toggle" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav id="nav-menu" class="navigation">
+        <ul class="nav-list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      
+      <button id="btn-fechar" class="menu-close" aria-label="Fechar menu">×</button>
+    </div>
   </header>
 
-  <section id="inicio" class="secao animar">
-    <div class="conteudo-inicio">
-      <h1>Olá, sou Allana Hidalgo</h1>
-      <p>Trabalho na área fiscal com mais de 10 anos de experiência.<br>Deixe-me resolver os seus problemas tributários!</p>
+  <main>
+    <section id="inicio" class="section hero-section">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-icon">✓</span>
+          <span>+10 anos de experiência</span>
+        </div>
+        <h1 class="hero-title">
+          Olá, sou <span class="highlight">Allana Hidalgo</span>
+        </h1>
+        <p class="hero-description">
+          Especialista em contabilidade fiscal com mais de 10 anos de experiência.<br>
+          <strong>Deixe-me resolver os seus problemas tributários com excelência!</strong>
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Clientes Atendidos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Anos de Experiência</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Satisfação</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section services-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Meus Serviços</h2>
+          <p class="section-subtitle">Soluções completas para suas necessidades fiscais e tributárias</p>
+        </div>
+        
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10,9 9,9 8,9"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Declarações e Regularização do MEI</h3>
+            <p class="service-description">Acompanhamento completo das obrigações do MEI</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Abertura e Encerramento do MEI</h3>
+            <p class="service-description">Processo completo de formalização empresarial</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Parcelamentos</h3>
+            <p class="service-description">Negociação e regularização de débitos fiscais</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/>
+                <path d="M16 8h4a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-4"/>
+                <circle cx="9" cy="9" r="2"/>
+                <path d="M6 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Declaração de Imposto de Renda PF</h3>
+            <p class="service-description">Elaboração precisa da declaração anual</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                <circle cx="12" cy="17" r="1"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <h3 class="service-title">Consultoria Tributária</h3>
+            <p class="service-description">Orientação especializada em questões fiscais</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section testimonials-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">Depoimentos</h2>
+          <p class="section-subtitle">O que nossos clientes dizem sobre nosso trabalho</p>
+        </div>
+        
+        <div class="testimonials-placeholder">
+          <div class="placeholder-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <p class="placeholder-text">Em breve você encontrará aqui os depoimentos dos nossos clientes satisfeitos.</p>
+          <span class="placeholder-subtext">Seja o primeiro a deixar seu feedback!</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section contact-section">
+      <div class="section-container">
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="section-header">
+              <h2 class="section-title">Entre em Contato</h2>
+              <p class="section-subtitle">Pronto para resolver suas questões fiscais? Fale comigo!</p>
+            </div>
+            
+            <div class="contact-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                  </svg>
+                </div>
+                <span>Resposta rápida</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <span>Atendimento personalizado</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 12l2 2 4-4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                  </svg>
+                </div>
+                <span>Qualidade garantida</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form-container">
+            <form id="formulario-contato" class="contact-form" onsubmit="enviarWhatsApp(event)">
+              <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo" required />
+              </div>
+              
+              <div class="form-group">
+                <label for="telefone">WhatsApp</label>
+                <input type="tel" id="telefone" placeholder="(00) 00000-0000" pattern="[0-9]{10,15}" required />
+              </div>
+              
+              <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Descreva como posso te ajudar..." required></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">
+                <span class="btn-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </span>
+                Enviar via WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="footer-text">© 2025 Allana Hidalgo. Todos os direitos reservados.</p>
+      <p class="footer-subtitle">Contabilidade com excelência e confiança</p>
     </div>
-  </section>
-
-  <section id="servicos" class="secao animar">
-    <h2>Serviços</h2>
-    <ul class="servicos">
-      <li>
-        <img src="imagens/mei.png" alt="MEI" class="icone-servico" />
-        Declarações e regularização do MEI
-      </li>
-      <li>
-        <img src="imagens/empresa.png" alt="Declaração MEI" class="icone-servico" />
-        Abertura e Encerramento do MEI
-      </li>
-      <li>
-        <img src="imagens/parcelamento.png" alt="Imposto de Renda Pessoa Física" class="icone-servico" />
-        Parcelamentos
-      </li>
-      <li>
-        <img src="imagens/imposto de renda.png" alt="Imposto de Renda Pessoa Jurídica" class="icone-servico" />
-        Declaração de Imposto de Renda Pessoa Física
-      </li>
-      <li>
-        <img src="imagens/duvida.png" alt="Consultoria Tributária" class="icone-servico" />
-        Consultoria Tributária
-      </li>
-    </ul>
-  </section>
-
-  <section id="depoimentos" class="secao animar">
-    <h2>Depoimentos</h2>
-    <p>Ainda não há depoimentos cadastrados.</p>
-  </section>
-
-  <section id="contato" class="secao animar">
-    <h2>Contato</h2>
-    <form id="formulario-contato" onsubmit="enviarWhatsApp(event)">
-      <input type="text" id="nome" placeholder="Seu nome" required />
-      <input type="tel" id="telefone" placeholder="Seu número de WhatsApp (somente números)" pattern="[0-9]{10,15}" required />
-      <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
-      <button type="submit">Enviar para o WhatsApp</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 Allana Hidalgo. Todos os direitos reservados.</p>
   </footer>
 
-  <a href="https://wa.me/5513981550121" class="whatsapp-icon" target="_blank" title="Fale com Allana no WhatsApp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+  <a href="https://wa.me/5513981550121" class="whatsapp-float" target="_blank" title="Fale com Allana no WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
   </a>
 
   <script src="script.js"></script>
